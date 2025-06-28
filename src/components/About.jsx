@@ -102,13 +102,11 @@ const About = () => {
 
           <div className="md:w-1/3 flex justify-center">
             <div className="relative w-64 h-64 group">
-              {/* Floating border effect */}
               <div className="absolute inset-0 border-2 border-secondary rounded-lg transform translate-x-4 translate-y-4 group-hover:translate-x-3 group-hover:translate-y-3 transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]"></div>
 
-              {/* Main image container with subtle shadow and glow */}
               <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl group-hover:shadow-secondary/20 transition-all duration-300">
                 <img
-                  src="/images/Anh_CV.jpg"
+                  src={`${import.meta.env.BASE_URL}images/Anh_CV.jpg`}
                   alt="V6 Thanh Hieu"
                   className="w-full h-full object-cover 
                   brightness-95 contrast-110 
@@ -117,11 +115,9 @@ const About = () => {
                   transition-all duration-500 ease-in-out"
                 />
 
-                {/* Subtle overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              {/* Floating dots decoration (optional) */}
               <div className="absolute -bottom-2 -right-2 w-4 h-4 rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity delay-100 duration-300"></div>
               <div className="absolute -top-2 -left-2 w-3 h-3 rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity delay-200 duration-300"></div>
             </div>

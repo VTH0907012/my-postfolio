@@ -1,6 +1,5 @@
 import { Link } from "react-scroll";
 
-// Hero component
 const Hero = () => {
   return (
     <section

@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 

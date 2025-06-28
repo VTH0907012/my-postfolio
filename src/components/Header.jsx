@@ -10,7 +10,6 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="text-secondary font-mono text-xl">Portfolio</div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               to="about"
@@ -55,7 +54,6 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -87,7 +85,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 space-y-4">
             <Link

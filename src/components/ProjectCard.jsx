@@ -1,4 +1,3 @@
-// src/components/ProjectCard.jsx
 const ProjectCard = ({ project }) => {
   return (
     <div className="bg-secondary/10 rounded-lg overflow-hidden transition-all hover:shadow-lg hover:shadow-secondary/10">

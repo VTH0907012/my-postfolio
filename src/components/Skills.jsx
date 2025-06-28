@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 import { skillCategories } from "../data/skills";
 
 const Skills = () => {
