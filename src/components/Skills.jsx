@@ -1,4 +1,19 @@
+
 import { skillCategories } from "../data/skills";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const Skills = () => {
   return (
@@ -11,17 +26,27 @@ const Skills = () => {
           <div className="w-full md:w-1/3 h-px bg-slate ml-4"></div>
         </div>
 
-        <div className="space-y-12">
+        <motion.div
+          className="space-y-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category">
+            <motion.div key={index} className="skill-category" variants={itemVariants}>
               <h3 className="text-xl font-bold mb-6 text-secondary border-b border-slate/50 pb-2">
                 {category.category}
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <motion.div
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+                variants={containerVariants}
+              >
                 {category.skills.map((skill, skillIndex) => (
-                  <div
+                  <motion.div
                     key={skillIndex}
                     className="flex items-center gap-3 bg-white/5 p-3 rounded-lg hover:bg-secondary/10 transition-colors"
+                    variants={itemVariants}
                   >
                     <div className="w-8 h-8 flex-shrink-0">
                       <img
@@ -38,12 +63,12 @@ const Skills = () => {
                       />
                     </div>
                     <span className="text-light text-sm">{skill.name}</span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

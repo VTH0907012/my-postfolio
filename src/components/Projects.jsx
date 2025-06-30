@@ -1,5 +1,20 @@
+
 import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const Projects = () => {
   return (
@@ -11,12 +26,20 @@ const Projects = () => {
           </h2>
           <div className="w-full md:w-1/3 h-px bg-slate ml-4"></div>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
+
+        <motion.div
+          className="grid md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <motion.div key={project.id} variants={itemVariants} className="flex h-full">
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

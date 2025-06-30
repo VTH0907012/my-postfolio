@@ -34,13 +34,13 @@ export const skillCategories = [
     ]
   },
   {
-    category: "Design & Prototyping",
+    category: "Design & Prototyping (Basic)",
     skills: [
       { name: "Figma", image: `${import.meta.env.BASE_URL}images/figma.svg` }
     ]
   },
   {
-    category: "Hosting Platforms",
+    category: "Hosting Platforms (Basic)",
     skills: [
       { name: "Vercel", image: `${import.meta.env.BASE_URL}images/vercel.svg` },
       { name: "Render", image: `${import.meta.env.BASE_URL}images/render.svg` },
